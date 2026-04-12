@@ -1,7 +1,7 @@
 'use strict';
 const Sync = {
-  SHEETS_URL: '', // Set your Google Apps Script Web App URL here
-  DRIVE_URL: '',  // Set your Google Drive upload endpoint here
+  SHEETS_URL: 'https://script.google.com/macros/s/AKfycbzIAQDr8ysVSMmlCgyBU2873YQ756FffqXGMeg_AfyKxuxGpae7qw_1SyIBr0A7TmYPlQ/exec', // Set your Google Apps Script Web App URL here
+  DRIVE_URL: 'https://drive.google.com/drive/u/0/folders/14gUu31uV4MI3qqR4kQEGgxfPnSTVKo9s',  // Set your Google Drive upload endpoint here
 
   async syncSubmission(submission) {
     if (!navigator.onLine) return;
