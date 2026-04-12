@@ -3,7 +3,7 @@
 // SETUP: Paste your Google Apps Script Web App URL below after deployment
 const Sync = {
   // ▼▼▼ PASTE YOUR APPS SCRIPT URL HERE ▼▼▼
-  SHEETS_URL: 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec',
+  SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyWM5w9qL49jRhcA3OHH8vSrJW34hzv_R8-nQoyfa4m5p3DODgqYcItm0t-0-KSbOef3Q/exec',
   // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
   get isConfigured() {
