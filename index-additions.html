@@ -1,0 +1,77 @@
+<!--
+  ═══════════════════════════════════════════════════════════════════════
+  INSTRUCTIONS — what to add to your existing index.html
+  ═══════════════════════════════════════════════════════════════════════
+
+  STEP 1 ─ Add this <link> in <head>, after the existing app.css link:
+
+    <link rel="stylesheet" href="css/app.css">           ← already exists
+    <link rel="stylesheet" href="css/tasks-v2.css">      ← ADD THIS
+
+  ─────────────────────────────────────────────────────────────────────
+
+  STEP 2 ─ Add the jsQR CDN script in <head> (needed for QR scanning):
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+
+  ─────────────────────────────────────────────────────────────────────
+
+  STEP 3 ─ Paste the block below INSIDE <div id="app">,
+           just BEFORE the existing <!-- OFFLINE BANNER --> comment:
+-->
+
+<!-- LOCATION CONFIRM SCREEN (injected dynamically by location.js,
+     but we pre-declare the container so the screen router can find it) -->
+<!-- Note: location.js injects the full screen HTML on first use,
+     so no static markup needed here — just ensure the scripts load. -->
+
+
+<!--
+  ─────────────────────────────────────────────────────────────────────
+
+  STEP 4 ─ Add new <script> tags at the BOTTOM of <body>,
+           BEFORE the existing scripts, in this order:
+
+    existing order (keep):
+      <script src="js/db.js"></script>        ← already exists (replace with v2)
+      <script src="js/auth.js"></script>       ← already exists, unchanged
+      <script src="js/tasks.js"></script>      ← REPLACE with new tasks.js
+      <script src="js/admin.js"></script>      ← already exists (Session 3 will upgrade)
+      <script src="js/calendar.js"></script>   ← already exists, unchanged
+      <script src="js/sync.js"></script>       ← already exists, unchanged
+      <script src="js/app.js"></script>        ← already exists, unchanged
+
+    ADD these two NEW lines between db.js and auth.js:
+
+      <script src="js/db.js"></script>
+      <script src="js/location.js"></script>   ← ADD (new)
+      <script src="js/auth.js"></script>
+
+  ─────────────────────────────────────────────────────────────────────
+
+  STEP 5 ─ In js/app.js, make sure the worker task tap calls:
+           TasksModule.openTask(taskId)    (was probably already there)
+
+           And add this case to your showScreen() router:
+           'location-confirm' → show #screen-location-confirm
+
+           If your app.js has a switch/if block like:
+             case 'worker-home': ...
+             case 'task-form':  ...
+
+           Add:
+             case 'location-confirm':
+               document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+               document.getElementById('screen-location-confirm').classList.add('active');
+               break;
+
+  ═══════════════════════════════════════════════════════════════════════
+  That's all 5 steps. Summary of files to update in GitHub:
+  ─────────────────────────────────────────────────────────────────────
+  REPLACE:  js/db.js          → new db.js    (Session 1)
+  ADD:      js/location.js    → new file
+  REPLACE:  js/tasks.js       → new tasks.js
+  ADD:      css/tasks-v2.css  → new file
+  EDIT:     index.html        → 3 small additions (steps 1, 2, 4 above)
+  ═══════════════════════════════════════════════════════════════════════
+-->
