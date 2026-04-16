@@ -1,0 +1,436 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   ApartmentCare — Admin v2 styles
+   Append to bottom of css/app.css  (or save as css/admin-v2.css and link it)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Admin loading / empty states ────────────────────────────────────────── */
+
+.admin-loading {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.admin-empty {
+  padding: 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.admin-empty-state {
+  padding: 60px 24px;
+  text-align: center;
+}
+.admin-empty-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #E1F5EE;
+  color: #0F6E56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 16px;
+}
+.admin-empty-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.admin-empty-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Section header ───────────────────────────────────────────────────────── */
+
+.admin-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px 10px;
+}
+.admin-section-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+.admin-form-wrap {
+  padding: 0;
+}
+.admin-form-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid var(--border-color);
+}
+.admin-form-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+.admin-form-card {
+  margin: 12px 16px;
+  padding: 16px;
+}
+.form-section-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+/* ── Queue summary pills ─────────────────────────────────────────────────── */
+
+.queue-summary {
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
+.summary-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+/* ── Queue cards ─────────────────────────────────────────────────────────── */
+
+.qcard {
+  background: var(--card-bg, #fff);
+  border: 0.5px solid var(--border-color);
+  border-radius: 10px;
+  margin: 0 16px 10px;
+  overflow: hidden;
+}
+.qcard-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.12s;
+}
+.qcard-header:hover {
+  background: var(--bg-secondary, #f8f8f6);
+}
+.qcard-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.qcard-meta {
+  flex: 1;
+  min-width: 0;
+}
+.qcard-title {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.qcard-sub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  margin-top: 5px;
+}
+.qcard-chevron {
+  font-size: 18px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.qcard-body {
+  display: none;
+  padding: 14px;
+  border-top: 0.5px solid var(--border-color);
+  background: var(--bg-secondary, #f8f8f8);
+}
+.qcard-body.open {
+  display: block;
+}
+.qcard-desc {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.qcard-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 4px 0;
+  border-bottom: 0.5px solid var(--border-color);
+}
+.qcard-info-row:last-of-type {
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+.qcard-info-row span:first-child {
+  color: var(--text-muted);
+}
+.qcard-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+/* Stock check boxes */
+.stock-check-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.stock-box {
+  flex: 1;
+  background: var(--card-bg, #fff);
+  border: 0.5px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.stock-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+.stock-val {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ── Ticket rows ─────────────────────────────────────────────────────────── */
+
+.ticket-filter-bar {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 12px;
+  overflow-x: auto;
+}
+.ticket-row {
+  margin: 0 16px 10px;
+  padding: 12px 14px;
+}
+.ticket-closed-bar {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding-top: 8px;
+  border-top: 0.5px solid var(--border-color);
+}
+
+/* ── WhatsApp toggle ─────────────────────────────────────────────────────── */
+
+.wa-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+.wa-toggle-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #25D366;
+  flex-shrink: 0;
+}
+
+/* ── Location grid ───────────────────────────────────────────────────────── */
+
+.loc-block-list {
+  padding: 0 16px 20px;
+}
+.loc-block-group {
+  margin-bottom: 20px;
+}
+.loc-block-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 0.5px solid var(--border-color);
+}
+.loc-unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+}
+.loc-unit-card {
+  background: var(--card-bg, #fff);
+  border: 0.5px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.loc-unit-card:hover {
+  border-color: #1D9E75;
+}
+.loc-unit-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+.loc-unit-key {
+  font-size: 10px;
+  font-family: monospace;
+  color: var(--text-muted);
+  margin-top: 3px;
+  word-break: break-all;
+}
+.loc-key-preview {
+  font-size: 12px;
+  font-family: monospace;
+  color: #0F6E56;
+  background: #E1F5EE;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-top: 4px;
+}
+
+/* ── Dashboard metrics ───────────────────────────────────────────────────── */
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.metric-card {
+  background: var(--bg-secondary, #f8f8f6);
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.metric-val {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.metric-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  line-height: 1.3;
+}
+.dashboard-section-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
+/* ── Worker strip ────────────────────────────────────────────────────────── */
+
+.worker-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+.worker-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.worker-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #EEEDFE;
+  color: #534AB7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+.worker-chip-name {
+  font-size: 11px;
+  font-weight: 500;
+}
+.worker-chip-stat {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* ── Activity feed ───────────────────────────────────────────────────────── */
+
+.activity-list {
+  margin-top: 8px;
+}
+.activity-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--border-color);
+}
+.activity-row:last-child { border-bottom: none; }
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.activity-body { flex: 1; min-width: 0; }
+.activity-label {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.activity-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* ── Button variants ─────────────────────────────────────────────────────── */
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 12px;
+}
+.btn-danger-soft {
+  background: #FCEBEB;
+  border-color: #F09595;
+  color: #A32D2D;
+}
+.btn-danger-soft:hover {
+  background: #F7C1C1;
+}
+.badge-outline {
+  background: transparent;
+  border: 0.5px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+.badge-coral {
+  background: #FAECE7;
+  color: #993C1D;
+}
